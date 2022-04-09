@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace PdTool
 {
-    public abstract class Radio : Node
+    public abstract class Radio : SRL
     {
         public int Size { get; set; }
         public int NewOld { get; set; } //unknown effect
         public bool Init { get; set; }
         public int Count { get; set; }
-        public string Send { get; set; }
-        public string Receive { get; set; }
-        public string Label { get; set; }
         public int XOffset { get; set; }
         public int YOffset { get; set; }
         public PdFont Font { get; set; }
@@ -27,9 +24,6 @@ namespace PdTool
             NewOld = 1;
             Init = false;
             Count = 8;
-            Send = "empty";
-            Receive = "empty";
-            Label = "empty";
             XOffset = 0;
             YOffset = -8;
             DefaultValue = 0;

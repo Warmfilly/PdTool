@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace PdTool
 {
-    public class Tgl : Node
+    public class Tgl : SRL
     {
         public int      Size            { get; set; }
         public int      InitValue       { get; set; } // What is this?
         public int      DefaultValue    { get; set; } // The value that the toggle sends out when it is toggled on
         public bool     Init            { get; set; } // If true, the toggle will bang upon initializing
-        public string   Send            { get; set; }
-        public string   Receive { get; set; }
-        public string   Label           { get; set; }
         public int XOffset { get; set; }
         public int YOffset { get; set; }
         public PdFont Font { get; set; }
@@ -30,9 +27,6 @@ namespace PdTool
             InitValue       = 0;
             DefaultValue    = 1;
             Init            = false;
-            Send = "empty";
-            Receive = "empty";
-            Label = "empty";
         }
 
         public override string ToString()

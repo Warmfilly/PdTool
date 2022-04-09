@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PdTool
 {
-    public abstract class Slider : Node
+    public abstract class Slider : SRL
     {
         public int Width { get; set; }
         public int Height { get; set; }
@@ -20,9 +20,6 @@ namespace PdTool
         public int FontSize { get; set; }
         public int DefaultValue { get; set; } //what is this?. The range is dependant on the Height
         public bool SteadyOnClick { get; set; }
-        public string Send { get; set; }
-        public string Receive { get; set; }
-        public string Label { get; set; }
 
         public Slider(int X, int Y) : base(X, Y)
         {
@@ -34,9 +31,6 @@ namespace PdTool
             FontSize = 10;
             DefaultValue = 0;
             SteadyOnClick = true;
-            Send = "empty";
-            Receive = "empty";
-            Label = "empty";
         }
     }
 }

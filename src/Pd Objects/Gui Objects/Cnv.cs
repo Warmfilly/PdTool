@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PdTool
 {
-    public class Cnv : Node
+    public class Cnv : SRL
     {
         public int Size { get; set; }
         public int Width { get; set; }
@@ -15,9 +15,6 @@ namespace PdTool
         public int YOffset { get; set; }
         public PdFont Font { get; set; }
         public int FontSize { get; set; }
-        public string Send { get; set; }
-        public string Receive { get; set; }
-        public string Label { get; set; }
 
         public Cnv(int X, int Y) : base(X, Y)
         {
@@ -26,9 +23,6 @@ namespace PdTool
             Height = 60;
             XOffset = 20;
             YOffset = 12;
-            Send = "empty";
-            Receive = "empty";
-            Label = "empty";
         }
 
         //#X obj 254 202 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577 0;

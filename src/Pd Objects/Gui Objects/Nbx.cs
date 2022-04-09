@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PdTool
 {
-    public class Nbx : Node
+    public class Nbx : SRL
     {
         public int Size { get; set; }
         public int Height { get; set; }
@@ -19,9 +19,6 @@ namespace PdTool
         public PdFont Font { get; set; }
         public int FontSize { get; set; }
         public int LogHeight { get; set; } //1 to 1000, default is 256
-        public string Send { get; set; }
-        public string Receive { get; set; }
-        public string Label { get; set; }
         public Nbx(int X, int Y) : base(X, Y)
         {
             Size = 5;
@@ -33,11 +30,8 @@ namespace PdTool
             XOffset = 0;
             YOffset = -8;
             LogHeight = 256;
-            Send = "empty";
-            Receive = "empty";
-            Label = "empty";
-
         }
+
         //#X obj 117 141 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0 10 -262144 -1 -1 0 256;
         public override string ToString()
         {
