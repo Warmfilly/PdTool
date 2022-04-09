@@ -7,12 +7,8 @@ using System.Drawing;
 
 namespace PdTool
 {
-    public class Bng : Node
+    public class Bng : SRL
     {
-        private string _send;
-        private string _receive;
-        private string _label;
-
         public int Size         { get; set; }
         public int Hold         { get; set; }
         public int Interrupt    { get; set; }
@@ -21,22 +17,6 @@ namespace PdTool
         public int YOffset      { get; set; }
         public PdFont Font         { get; set; }
         public int FontSize     { get; set; }
-        public string Send
-        {
-            get { return _send; }
-            set { _send = Util.SanitizeSRL(value); }
-        }
-        public string Receive
-        {
-            get { return _receive; }
-            set { _receive = Util.SanitizeSRL(value); }
-        }
-        public string Label
-        {
-            get { return _label; }
-            set { _label = Util.SanitizeSRL(value); }
-        }
-
 
         public Bng(int X, int Y) : base(X, Y)
         {
@@ -48,9 +28,6 @@ namespace PdTool
             Font = 0;
             FontSize = 10;
 
-            _send = "empty";
-            _receive = "empty";
-            _label = "empty";
         }
 
         public override string ToString()
