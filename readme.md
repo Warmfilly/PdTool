@@ -17,8 +17,8 @@ var main = new Patch(0, 0, 500, 500);
 var hsl = new Hsl(200, 200);
 var num = new Number(200, 300);
 
-main.AddNode(hsl);
-main.AddNode(num);
+main.Add(hsl);
+main.Add(num);
 
 main.Connect(hsl, num);
 
@@ -40,16 +40,16 @@ var inlet   = new Obj("inlet", 250, 100);
 var add     = new Obj("+ 1", 250, 150);
 var outlet  = new Obj("outlet", 250, 200);
 
-sub.AddNode(inlet);
-sub.AddNode(add);
-sub.AddNode(outlet);
+sub.Add(inlet);
+sub.Add(add);
+sub.Add(outlet);
 
 sub.Connect(inlet, add);
 sub.Connect(add, outlet);
 
-main.AddNode(numIn);
-main.AddNode(sub);
-main.AddNode(numOut);
+main.Add(numIn);
+main.Add(sub);
+main.Add(numOut);
 
 main.Connect(numIn, sub);
 main.Connect(sub, numOut);
@@ -59,23 +59,19 @@ main.Save("patch.pd");
 ```
 
 #### Connection example:
-Connect osc~ to both inlets of dac~
+Connect `osc~` to both inlets of `dac~`
 
 ```csharp
-Patch main = new Patch(0, 0, 500, 500);
+var main = new Patch(0, 0, 500, 500);
 
 var osc = new Obj("osc~ 440", 250, 100);
-var mul = new Obj("*~ 0.2", 250, 150);
 var dac = new Obj("dac~", 250, 200);
 
-main.AddNode(osc);
-main.AddNode(mul);
-main.AddNode(dac);
+main.Add(osc);
+main.Add(dac);
 
-main.Connect(osc, mul); //Connect osc to left inlet of mul
-main.Connect(mul, dac); //Connect mul to left inlet of dac
-
-main.Connect(new ConnSrc(mul), new ConnSink(dac, 1)); //Connect mul to right inlet of dac
+main.Connect(osc, dac); //Connect osc to left inlet of dac
+main.Connect(new ConnSrc(osc), new ConnSink(dac, 1)); //Connect osc to right inlet of dac
 
 main.Save("patch.pd");
 ```
