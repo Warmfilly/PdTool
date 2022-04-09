@@ -1,5 +1,5 @@
 # PdTool
-A tool written in .NET to programmatically generate Pure Data patches. 
+A .NET tool to programmatically generate Pure Data patches.
 
 ## TODO's
 <ul>
